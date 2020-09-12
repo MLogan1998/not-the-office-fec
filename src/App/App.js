@@ -1,14 +1,37 @@
 import React from 'react';
+import {
+  BrowserRouter,
+  Redirect,
+  Route,
+  Switch,
+} from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import connection from '../helpers/data/connection';
 
 import Navbar from '../components/pages/Navbar/Navbar';
+import Hello from '../components/pages/Hello/Hello';
+import RGenerator from '../components/pages/Generator/Generator';
+import Watchlist from '../components/pages/Watchlist/Watchlist';
 
 import './App.scss';
 
 connection();
+
+const PublicRoute = ({ component: Component, authed, ...rest }) => {
+  const routeChecker = (props) => (authed === false
+    ? (<Component {...props} />)
+    : (<Redirect to={{ pathname: '/home', state: { from: props.location } }} />));
+  return <Route {...rest} render={(props) => routeChecker(props)} />;
+};
+
+const PrivateRoute = ({ component: Component, authed, ...rest }) => {
+  const routeChecker = (props) => (authed === true
+    ? (<Component {...props} />)
+    : (<Redirect to={{ pathname: '/auth', state: { from: props.location } }} />));
+  return <Route {...rest} render={(props) => routeChecker(props)} />;
+};
 
 class App extends React.Component {
   state = {
@@ -33,7 +56,22 @@ class App extends React.Component {
     const { authed } = this.state;
     return (
       <div className="App">
-        <Navbar authed={authed} />
+        <BrowserRouter>
+          <React.Fragment>
+            <Navbar authed={authed} />
+            <div>
+              <Switch>
+                <Route path="/hello">
+                  <Hello authed={authed} />
+                </Route>
+                <PrivateRoute path="/watchlist" component={Watchlist} authed={authed} />
+                <PrivateRoute path="/generator" component={RGenerator} authed={authed} />
+                <PublicRoute path="/auth" component={Hello} authed={authed} />
+                <Redirect from="*" to="/hello" />
+              </Switch>
+            </div>
+          </React.Fragment>
+        </BrowserRouter>
       </div>
     );
   }
