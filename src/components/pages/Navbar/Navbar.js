@@ -13,6 +13,8 @@ import {
 } from 'reactstrap';
 
 import PropTypes from 'prop-types';
+import { NavLink as RRNavLink } from 'react-router-dom';
+
 import './Navbar.scss';
 
 class NavBar extends React.Component {
@@ -47,15 +49,21 @@ class NavBar extends React.Component {
       if (authed) {
         return (
           <Nav className="container-fluid" navbar>
-          <NavItem className="ml-auto">
-            <NavLink className="lnk" onClick={this.signOut}><i class="far fa-user mr-2"></i>Log Out</NavLink>
-          </NavItem>
-        </Nav>
+            <NavItem>
+              <NavLink className="lnk" tag={RRNavLink} to='/generator'>Generator</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink className="lnk" tag={RRNavLink} to='/watchlist'>Watchlist</NavLink>
+            </NavItem>
+            <NavItem className="ml-auto">
+              <NavLink className="lnk" onClick={this.signOut}><i className="far fa-user mr-2"></i>Log Out</NavLink>
+            </NavItem>
+          </Nav>
         );
       }
       return <Nav className="container-fluid" navbar>
                <NavItem className="ml-auto">
-                 <NavLink className="lnk" onClick={this.signIn}><i class="far fa-user mr-2"></i>Log In</NavLink>
+                 <NavLink className="lnk" onClick={this.signIn}><i className="far fa-user mr-2"></i>Log In</NavLink>
                </NavItem>
              </Nav>;
     };
@@ -63,7 +71,7 @@ class NavBar extends React.Component {
     return (
       <div>
       <Navbar color="dark" light expand="md">
-        <NavbarBrand className="lnk" href="/">Not The Office Again</NavbarBrand>
+        <NavbarBrand className="lnk" tag={RRNavLink} to='/hello'>Not The Office Again</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={isOpen} navbar>
         <Nav className="container-fluid" navbar>
