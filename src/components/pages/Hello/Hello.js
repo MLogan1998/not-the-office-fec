@@ -10,7 +10,9 @@ class Hello extends React.Component {
 
   render() {
     return (
-      <h4>Hello Component</h4>
+      <div className="home-wrapper">
+        <h2>There are other options. Break the cycle.</h2>
+      </div>
     );
   }
 }
