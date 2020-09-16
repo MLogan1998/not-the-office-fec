@@ -18,13 +18,48 @@ class Generator extends React.Component {
     movies: [],
   }
 
-  componentDidMount() {
-    this.msMovies();
-    this.getQuote();
-  }
-
   msMovies = () => {
     movieData.getCharMovies(4495)
+      .then((movies) => {
+        this.setState({ movies });
+      })
+      .catch((err) => console.error(err));
+  }
+
+  dsMovies = () => {
+    movieData.getCharMovies(11678)
+      .then((movies) => {
+        this.setState({ movies });
+      })
+      .catch((err) => console.error(err));
+  }
+
+  kkMovies = () => {
+    movieData.getCharMovies(125167)
+      .then((movies) => {
+        this.setState({ movies });
+      })
+      .catch((err) => console.error(err));
+  }
+
+  jhMovies = () => {
+    movieData.getCharMovies(17697)
+      .then((movies) => {
+        this.setState({ movies });
+      })
+      .catch((err) => console.error(err));
+  }
+
+  abMovies = () => {
+    movieData.getCharMovies(27105)
+      .then((movies) => {
+        this.setState({ movies });
+      })
+      .catch((err) => console.error(err));
+  }
+
+  pbMovies = () => {
+    movieData.getCharMovies(51856)
       .then((movies) => {
         this.setState({ movies });
       })
@@ -41,9 +76,9 @@ class Generator extends React.Component {
 
   render() {
     return (
-      <div>
-        <h4>Generator</h4>
-        <CharacterIcons />
+      <div className="generator-wrapper">
+        <h4>Click on your <span className="orange">favorite</span> character.</h4>
+        <CharacterIcons msMovies={this.msMovies} dsMovies={this.dsMovies} kkMovies={this.kkMovies} jhMovies={this.jhMovies} pbMovies={this.pbMovies} abMovies={this.abMovies}/>
         <RandomMovie />
       </div>
     );
