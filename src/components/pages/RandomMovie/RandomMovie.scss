@@ -1,0 +1,128 @@
+.poster {
+  margin: 5px;
+}
+
+.description {
+  color:white;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.posterimg {
+ box-shadow: 0px 0px 1px #ddd, 0 0px 10px #ccc;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 320px;
+	height: 480px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.back {
+  background-color:rgb(68, 68, 68);
+  box-shadow: 0px 0px 1px #ddd, 0 0px 10px #ccc;
+}
+
+.backDetails {
+  color: black;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+.container {
+  display: grid;
+  height: 70vh;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  border: 1px sold white;
+}
+
+.item-a{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 9;
+  place-self: center;
+  align-self: start;
+}
+
+.item-b{
+  grid-column-start: 2;
+  grid-row-start: 10;
+}
+
+.item-c , .item-d, .item-e{
+  color: white;
+  grid-column-start: 1;
+  place-self: start;
+  align-self: start;
+  font-weight: bold;
+  margin-left: 95px;
+}
+
+.item-c{
+  grid-row: 2/2;
+  background-color: grey;
+  border:1px solid lightgrey;
+  padding: 8px;
+  text-align: left;
+
+
+}
+.item-d{
+  grid-row: 2/auto;
+  text-align: left;
+  h5 {
+    background-color: grey;
+    border:1px solid lightgrey;
+    margin-bottom: 18px !important;
+    padding: 8px;
+    }
+}
+.item-e{
+  grid-row: 4/4;
+}
+
+.item-f {
+  color:white;
+  font-weight: bold;
+  grid-column: 3/3;
+  place-self: center;
+  align-self: start;
+  grid-row:2/auto;
+}
