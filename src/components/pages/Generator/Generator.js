@@ -74,12 +74,23 @@ class Generator extends React.Component {
       .catch((err) => console.error(err));
   }
 
+  randomMovie = () => {
+    const { movies } = this.state;
+    const arrLength = movies.length;
+    const index = Math.floor(Math.random() * arrLength);
+    if (arrLength > 0) {
+      const movie = movies[index];
+      return <RandomMovie key={movie.id} movie={movie} />;
+    }
+    return '';
+  };
+
   render() {
     return (
       <div className="generator-wrapper">
         <h4>Click on your <span className="orange">favorite</span> character.</h4>
         <CharacterIcons msMovies={this.msMovies} dsMovies={this.dsMovies} kkMovies={this.kkMovies} jhMovies={this.jhMovies} pbMovies={this.pbMovies} abMovies={this.abMovies}/>
-        <RandomMovie />
+        {this.randomMovie()}
       </div>
     );
   }

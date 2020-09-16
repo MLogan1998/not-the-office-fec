@@ -3,6 +3,42 @@ import React from 'react';
 import './CharacterIcons.scss';
 
 class CharacterIcons extends React.Component {
+  msClickEvent = (e) => {
+    const { msMovies } = this.props;
+    e.preventDefault();
+    msMovies();
+  }
+
+  dsClickEvent = (e) => {
+    const { dsMovies } = this.props;
+    e.preventDefault();
+    dsMovies();
+  }
+
+  kkClickEvent = (e) => {
+    const { kkMovies } = this.props;
+    e.preventDefault();
+    kkMovies();
+  }
+
+  jhClickEvent = (e) => {
+    const { jhMovies } = this.props;
+    e.preventDefault();
+    jhMovies();
+  }
+
+  pbClickEvent = (e) => {
+    const { pbMovies } = this.props;
+    e.preventDefault();
+    pbMovies();
+  }
+
+  abClickEvent = (e) => {
+    const { abMovies } = this.props;
+    e.preventDefault();
+    abMovies();
+  }
+
   render() {
     return (
       <div className="character-icons">
