@@ -56,22 +56,22 @@ class NavBar extends React.Component {
               <NavLink className="lnk" tag={RRNavLink} to='/watchlist'>Watchlist</NavLink>
             </NavItem>
             <NavItem className="ml-auto">
-              <NavLink className="lnk" onClick={this.signOut}><i className="far fa-user mr-2"></i>Log Out</NavLink>
+              <NavLink className="lnk" onClick={this.signOut}><i className="far fa-user mr-2 orange"></i>Log Out</NavLink>
             </NavItem>
           </Nav>
         );
       }
       return <Nav className="container-fluid" navbar>
                <NavItem className="ml-auto">
-                 <NavLink className="lnk" onClick={this.signIn}><i className="far fa-user mr-2"></i>Log In</NavLink>
+                 <NavLink className="lnk" onClick={this.signIn}><i className="far fa-user mr-2 orange"></i>Log In</NavLink>
                </NavItem>
              </Nav>;
     };
 
     return (
       <div>
-      <Navbar color="dark" light expand="md">
-        <NavbarBrand className="lnk" tag={RRNavLink} to='/hello'>Not The Office Again</NavbarBrand>
+      <Navbar color="dark" light expand="md" className="greybg">
+        <NavbarBrand className="lnk orange" tag={RRNavLink} to='/hello'>Not The Office Again</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={isOpen} navbar>
         <Nav className="container-fluid" navbar>
