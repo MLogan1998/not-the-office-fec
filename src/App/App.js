@@ -61,9 +61,7 @@ class App extends React.Component {
             <Navbar authed={authed} />
             <div>
               <Switch>
-                <Route path="/hello">
-                  <Hello authed={authed} />
-                </Route>
+                <Route path='/hello' render={(props) => <Hello authed={authed} {...props} />} />
                 <PrivateRoute path="/watchlist" component={Watchlist} authed={authed} />
                 <PrivateRoute path="/generator" component={RGenerator} authed={authed} />
                 <PublicRoute path="/auth" component={Hello} authed={authed} />

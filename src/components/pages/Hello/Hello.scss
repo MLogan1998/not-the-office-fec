@@ -1,7 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Kufam:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-h2 {
-  font-family: 'Kufam', cursive;
-  color: white;
-  margin-top: 2vh;
+.home-wrapper {
+  h2 {
+    font-family: 'Kufam', cursive;
+    color: white;
+    margin-top: 2vh;
+    margin-bottom: 25px;
+  }
+
+  .lpText {
+    width: 40vw;
+    margin: 10px auto 0px auto;
+    border-bottom: 1px solid rgb(79, 79, 79);
+
+    p {
+      color: white;
+      font-size: 18px;
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 25px;
+
+      .blue {
+        color: #ffa64f;
+        font-weight: bold;
+      }
+    }
+
+    button {
+      margin-bottom: 25px;
+    }
+  }
+  .orangebg{
+    background-color: #ffa64f;
+  }
+
+  .orangebg:hover {
+    background-color: #db8f45
+  }
 }
