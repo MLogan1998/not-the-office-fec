@@ -1,6 +1,8 @@
 import React from 'react';
 
 import quoteData from '../../../helpers/data/quoteData';
+import authData from '../../../helpers/data/authData';
+import watchlistData from '../../../helpers/data/watchlistData';
 
 import './RandomMovie.scss';
 
@@ -13,6 +15,20 @@ class RandomMovie extends React.Component {
   componentDidMount() {
     this.getQuote();
     this.getChar();
+  }
+
+  watchlistClick = (e) => {
+    e.preventDefault();
+    const { movie } = this.props;
+    const newMovie = {
+      poster_path: movie.poster_path,
+      title: movie.title,
+      watched: false,
+      uid: authData.getUid(),
+    };
+    watchlistData.addMovie(newMovie)
+      .then()
+      .catch((err) => console.error(err));
   }
 
   getQuote = () => {
