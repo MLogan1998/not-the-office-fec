@@ -7,10 +7,12 @@ import './RandomMovie.scss';
 class RandomMovie extends React.Component {
   state = {
     quote: {},
+    officeCharacter: {},
   }
 
   componentDidMount() {
     this.getQuote();
+    this.getChar();
   }
 
   getQuote = () => {
@@ -25,9 +27,16 @@ class RandomMovie extends React.Component {
       .catch((err) => console.error(err));
   }
 
+  getChar = () => {
+    const { movie } = this.props;
+    quoteData.getOfficeCharByCharId(movie.quoteId)
+      .then((character) => this.setState({ officeCharacter: character[0] }))
+      .catch((err) => console.error(err));
+  }
+
   render() {
     const { movie } = this.props;
-    const { quote } = this.state;
+    const { quote, officeCharacter } = this.state;
     const movieUrl = `https://image.tmdb.org/t/p/w342${movie.poster_path}`;
 
     return (
@@ -38,13 +47,18 @@ class RandomMovie extends React.Component {
               <img className="posterimg" src={movieUrl} alt={movie.title}></img>
             </div>
             <div className="back backDetails">
-              <h5>{movie.title}</h5>
-              <p>{quote.quote}</p>
+              <blockquote className="blockquote"><p>{quote.quote}</p>
+                <footer>
+                  <cite>
+                    {officeCharacter.character}
+                  </cite>
+                </footer>
+              </blockquote>
             </div>
           </div>
         </div>
         <div className="item-b">
-          <button className="btn btn-secondary mt-2" disabled onClick={this.watchlistClick}><i className="fas fa-eye mr-2"></i>Add to Watchlist</button>
+          <button className="btn btn-secondary mt-2" onClick={this.watchlistClick}><i className="fas fa-eye mr-2 orange"></i>Add to Watchlist</button>
         </div>
         <div className="item-d">
           <h5>{movie.title}</h5>
@@ -53,6 +67,7 @@ class RandomMovie extends React.Component {
           <p><i className="fas fa-star mr-2 orange"></i>{movie.vote_average}</p>
         </div>
         <div className="item-f">
+          <h6 className="orange">Overview</h6>
           <p>{movie.overview}</p>
         </div>
       </div>

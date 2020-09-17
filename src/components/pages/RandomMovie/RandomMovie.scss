@@ -1,22 +1,11 @@
-.poster {
-  margin: 5px;
-}
-
-.description {
-  color:white;
-  width: 40%;
-  margin: 0 auto;
-}
-
 .posterimg {
  box-shadow: 0px 0px 1px #ddd, 0 0px 10px #ccc;
 }
 
-/* entire container, keeps perspective */
 .flip-container {
 	perspective: 1000px;
 }
-	/* flip the pane when hovered */
+	
 	.flip-container:hover .flipper, .flip-container.hover .flipper {
 		transform: rotateY(180deg);
 	}
@@ -26,7 +15,6 @@
 	height: 480px;
 }
 
-/* flip speed goes here */
 .flipper {
 	transition: 0.6s;
 	transform-style: preserve-3d;
@@ -34,7 +22,6 @@
 	position: relative;
 }
 
-/* hide back of pane during swap */
 .front, .back {
 	backface-visibility: hidden;
 
@@ -48,25 +35,19 @@
   box-shadow: 0px 0px 1px #ddd, 0 0px 10px #ccc;
 }
 
-.backDetails {
-  color: black;
-}
-
-/* front pane, placed above back */
 .front {
 	z-index: 2;
 	/* for firefox 31 */
 	transform: rotateY(0deg);
 }
 
-/* back, initially hidden pane */
 .back {
 	transform: rotateY(180deg);
 }
 
 .container {
   display: grid;
-  height: 70vh;
+  height: 75vh;
   grid-template-columns: 25% 50% 25%;
   grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
   border: 1px sold white;
@@ -75,15 +56,15 @@
 .item-a{
   grid-column-start: 2;
   grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 9;
+  grid-row-start: 1;
+  grid-row-end: 8;
   place-self: center;
   align-self: start;
 }
 
 .item-b{
   grid-column-start: 2;
-  grid-row-start: 10;
+  grid-row-start: 8;
 }
 
 .item-c , .item-d, .item-e{
@@ -105,17 +86,15 @@
 
 }
 .item-d{
-  grid-row: 2/auto;
+  grid-row: 1/auto;
   text-align: left;
   h5 {
-    background-color: grey;
-    border:1px solid lightgrey;
-    margin-bottom: 18px !important;
-    padding: 8px;
+    color: #ffa64f;
+    padding-bottom: 8px;
     }
 }
 .item-e{
-  grid-row: 4/4;
+  grid-row: 1/4;
 }
 
 .item-f {
@@ -124,5 +103,64 @@
   grid-column: 3/3;
   place-self: center;
   align-self: start;
-  grid-row:2/auto;
+  grid-row:1/auto;
+}
+
+
+.white {
+  color: white;
+}
+
+blockquote {
+  font-family: Georgia, serif;
+  position: relative;
+  color:white;
+  margin: 0.5em;
+  padding: 0.5em 2em .5em 2em;
+}
+
+blockquote:before {
+  font-family: Georgia, serif;
+  position: absolute;
+  font-size: 4em;
+  line-height: 1;
+  top: 0;
+  left: 0;
+  color: #ffa64f;
+  content: "\201C";
+}
+blockquote:after {
+  font-family: Georgia, serif;
+  position: absolute;
+  float:right;
+  font-size:4em;
+  line-height: 1;
+  right:0;
+  bottom:0;
+  color: #ffa64f;
+  content: "\201D";
+}
+blockquote footer {
+ text-align: center !important;
+  margin-top: 10px;
+  text-align:right;
+}
+blockquote cite:before {
+  content: "\2013";
+}
+
+
+@media only screen and (max-width: 1360px) {
+  .item-b{
+    grid-column-start: 2 !important;
+    grid-row-start: 10;
+  }
+  .container {
+    display: grid;
+    height: 80vh;
+  }
+
+  .item-d, .item-f {
+    display: none;
+  }
 }
