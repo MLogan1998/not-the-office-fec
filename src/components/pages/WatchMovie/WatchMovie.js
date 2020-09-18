@@ -4,8 +4,10 @@ import './WatchMovie.scss';
 
 class WatchMovie extends React.Component {
   render() {
+    const { movie } = this.props;
+    const movieUrl = `https://image.tmdb.org/t/p/w154${movie.poster_path}`;
     return (
-      <h4>WatchMovie Component</h4>
+      <img className="watch-movie" src={movieUrl} alt={movie.title}></img>
     );
   }
 }
