@@ -24,14 +24,14 @@ class WatchMovie extends React.Component {
       {
         movie.watched ? (
         // <div className="card">
-        <div className="card-m">
+          <div className="card-m">
             <div id="watched" className="overlay card">
-            <img className="card-img-top watch-movie" src={movieUrl} alt={movie.title}></img>
-            <div className="card-footer">
-              <i className="fas fa-eye watched-eye"></i>
+              <img className="card-img-top watch-movie" src={movieUrl} alt={movie.title}></img>
+              <div className="card-footer">
+                <i className="fas fa-eye watched-eye"></i>
+              </div>
             </div>
-         </div>
-         </div>
+          </div>
         ) : (
           <div className="card card-m">
             <div className="watch-movie">
