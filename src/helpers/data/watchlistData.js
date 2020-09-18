@@ -21,7 +21,10 @@ const getWatchlistByUid = (uid) => new Promise((resolve, reject) => {
 
 const addMovie = (newMovie) => axios.post(`${baseUrl}/watchlist.json`, newMovie);
 
+const updateMovie = (movieId, editedMovie) => axios.put(`${baseUrl}/watchlist/${movieId}.json`, editedMovie);
+
 export default {
   addMovie,
   getWatchlistByUid,
+  updateMovie,
 };

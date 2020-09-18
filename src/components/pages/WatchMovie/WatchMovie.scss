@@ -1,6 +1,23 @@
 .watch-movie {
-  margin: 5px;
-  border: 1px solid rgb(179, 179, 179);
-  max-width: 154px;
-  max-height: 230px;
+//  position: relative; 
+ min-height: 230px !important;
+ max-height: 230px !important;
+}
+
+.unwatched-eye {
+  cursor: pointer;
+}
+#watched.overlay {
+background-color: rgb(97, 97, 97);
+position: relative;
+width: 100%;
+height: 100%;
+opacity: 0.15;
+-moz-opacity: 15%;
+-webkit-opacity: 15%;
+z-index: 1;
+}
+
+.card-m {
+  margin: 4px;
 }
