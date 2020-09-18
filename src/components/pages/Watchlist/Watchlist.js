@@ -61,9 +61,13 @@ class Watchlist extends React.Component {
     const listMovies = watchlist.map((movie) => <WatchMovie key={movie.id} movie={movie} updateMovie={this.updateMovie} />);
     return (
       <div>
-        <h2 className="orange">Watchlist</h2>
+        <h4 className="progressh4">Track your progress. <span className="orange">Never give up.</span></h4>
         <div className="progress">
-        <div className="progress-bar progress-bar-striped bg-info" role="progressbar" style={progressStyle} aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100"></div>
+        <div className="progress-bar progress-bar-striped bg-info" role="progressbar" style={progressStyle} aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100">{progress}%</div>
+        </div>
+        <div className="doc-wrapper mt-1 mb-4">
+        <i class="fas fa-prescription orange"></i>
+          <h6>Doctors reccomend <span className="orange">watching 10 movies</span> to completely break the cycle.</h6>
         </div>
         <div className="list-wrapper">
           {listMovies}

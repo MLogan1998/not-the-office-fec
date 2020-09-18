@@ -16,5 +16,29 @@
 
 .progress {
   width: 60%;
-  margin: 10px auto;
+  margin: 10px auto 0px auto;
+}
+
+.progress-bar {
+  background-color:#ffa64f !important;
+  font-weight: bold;
+}
+
+.doc-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+
+  h6 {
+    color: white;
+    margin: 3px;
+  }
+}
+.progressh4 {
+font-family: 'Kufam', cursive;
+color: white;
+margin-top: 2vh;
+margin-bottom: 12px;
 }
