@@ -27,9 +27,15 @@ class Watchlist extends React.Component {
       .catch((err) => console.error(('couldnt get stuff', err)));
   }
 
+  updateMovie = (movieId, editedMovie) => {
+    watchlistData.updateMovie(movieId, editedMovie)
+      .then(() => this.getWatchlist())
+      .catch((err) => console.error(err));
+  }
+
   render() {
     const { watchlist } = this.state;
-    const listMovies = watchlist.map((movie) => <WatchMovie key={movie.id} movie={movie} deleteItem={this.deleteItem}/>);
+    const listMovies = watchlist.map((movie) => <WatchMovie key={movie.id} movie={movie} updateMovie={this.updateMovie} />);
     return (
       <div>
         <h2 className="orange">Watchlist</h2>

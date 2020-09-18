@@ -1,4 +1,15 @@
 .list-wrapper {
   width: 75vw;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  // margin: 25px;
+
+  .card-footer{
+    padding: 0px 5px;
+  }
 }
