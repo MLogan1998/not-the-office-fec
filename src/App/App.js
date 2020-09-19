@@ -14,6 +14,7 @@ import Navbar from '../components/pages/Navbar/Navbar';
 import Hello from '../components/pages/Hello/Hello';
 import RGenerator from '../components/pages/Generator/Generator';
 import Watchlist from '../components/pages/Watchlist/Watchlist';
+import SingleMovie from '../components/pages/SingleMovie/SingleMovie';
 
 import './App.scss';
 
@@ -62,6 +63,7 @@ class App extends React.Component {
             <div>
               <Switch>
                 <Route path='/hello' render={(props) => <Hello authed={authed} {...props} />} />
+                <PrivateRoute path="/watchlist/:movieId" component={SingleMovie} authed={authed} />
                 <PrivateRoute path="/watchlist" component={Watchlist} authed={authed} />
                 <PrivateRoute path="/generator" component={RGenerator} authed={authed} />
                 <PublicRoute path="/auth" component={Hello} authed={authed} />
