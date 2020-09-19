@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import WatchMovie from '../WatchMovie/WatchMovie';
+import ProgressBar from './ProgressBar/ProgressBar';
 
 import watchlistData from '../../../helpers/data/watchlistData';
 import authData from '../../../helpers/data/authData';
@@ -29,7 +30,7 @@ class Watchlist extends React.Component {
       .catch((err) => console.error(('couldnt get stuff', err)));
   }
 
-  filterByID = (item) => {
+  filterByWatched = (item) => {
     if (item.watched) {
       return true;
     }
@@ -39,8 +40,11 @@ class Watchlist extends React.Component {
   progress = () => {
     watchlistData.getWatchlistByUid(authData.getUid())
       .then((watchlist) => {
-        const progress = watchlist.filter(this.filterByID);
-        const progressNum = progress.length * 10;
+        const progress = watchlist.filter(this.filterByWatched);
+        let progressNum = progress.length * 10;
+        if (progressNum >= 100) {
+          progressNum = 100;
+        }
         this.setState({ progress: progressNum });
       })
       .catch((err) => console.error(err));
@@ -65,18 +69,23 @@ class Watchlist extends React.Component {
 
   render() {
     const { watchlist, progress } = this.state;
-    const progressStyle = { width: `${progress}%` };
     const listMovies = watchlist.map((movie) => <WatchMovie key={movie.id} movie={movie} updateMovie={this.updateMovie} deleteMovie={this.deleteMovie} />);
     return (
       <div>
         <h4 className="progressh4">Track your progress. <span className="orange">Never give up.</span></h4>
-        <div className="progress">
-        <div className="progress-bar progress-bar-striped bg-info" role="progressbar" style={progressStyle} aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100">{progress}%</div>
-        </div>
-        <div className="doc-wrapper mt-1 mb-4">
-        <i className="fas fa-prescription orange"></i>
-          <h6>Doctors reccomend <span className="orange">watching 10 movies</span> to completely break the cycle.</h6>
-        </div>
+        <ProgressBar progress={progress}/>
+        {
+          progress < 100 ? (
+            <div className="doc-wrapper mt-1 mb-4">
+            <i className="fas fa-prescription orange"></i>
+            <h6>Doctors reccomend <span className="orange">watching 10 movies</span> to completely break the cycle.</h6>
+          </div>
+          ) : (
+            <div className="doc-wrapper mt-1 mb-4">
+            <h6><span className="green">Congratulations!</span> You have broken the cycle. You are ready to check out our <span className="green">Staff Picks.</span></h6>
+          </div>
+          )
+        }
         <div className="list-wrapper">
           {listMovies}
         </div>
