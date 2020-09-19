@@ -35,8 +35,6 @@ const getWatchlistByMovieId = (movieId) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-// const getWatchlistByMovieId = (movieId) => axios.get(`${baseUrl}/watchlist.json?orderBy="movieId"&equalTo="${movieId}"`);
-
 const addMovie = (newMovie) => axios.post(`${baseUrl}/watchlist.json`, newMovie);
 
 const updateMovie = (movieId, editedMovie) => axios.put(`${baseUrl}/watchlist/${movieId}.json`, editedMovie);
