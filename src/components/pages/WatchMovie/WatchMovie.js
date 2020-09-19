@@ -12,7 +12,7 @@ class WatchMovie extends React.Component {
       title: movie.title,
       uid: movie.uid,
       watched: true,
-      movieId: movie.movieid,
+      movieId: movie.movieId,
     };
     updateMovie(movie.id, updatedMovie);
   }
