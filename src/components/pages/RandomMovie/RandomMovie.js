@@ -25,6 +25,7 @@ class RandomMovie extends React.Component {
       title: movie.title,
       watched: false,
       uid: authData.getUid(),
+      movieid: movie.id,
     };
     watchlistData.addMovie(newMovie)
       .then()

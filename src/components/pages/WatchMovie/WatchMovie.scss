@@ -4,7 +4,7 @@
  max-height: 230px !important;
 }
 
-.unwatched-eye {
+.unwatched-eye, .unwatched-trash {
   cursor: pointer;
 }
 #watched.overlay {
@@ -20,4 +20,14 @@ z-index: 1;
 
 .card-m {
   margin: 4px;
+}
+
+.card {
+  // margin: 25px;
+
+  .card-footer{
+    padding: 3px 15px;
+    display: flex;
+    justify-content: space-between;
+  }
 }
