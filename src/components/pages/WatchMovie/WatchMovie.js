@@ -12,8 +12,15 @@ class WatchMovie extends React.Component {
       title: movie.title,
       uid: movie.uid,
       watched: true,
+      movieId: movie.movieId,
     };
     updateMovie(movie.id, updatedMovie);
+  }
+
+  deleteEvent = (e) => {
+    e.preventDefault();
+    const { movie, deleteMovie } = this.props;
+    deleteMovie(movie.id);
   }
 
   render() {
@@ -28,7 +35,8 @@ class WatchMovie extends React.Component {
             <div id="watched" className="overlay card">
               <img className="card-img-top watch-movie" src={movieUrl} alt={movie.title}></img>
               <div className="card-footer">
-                <i className="fas fa-eye watched-eye"></i>
+                <i className="fas fa-eye"></i>
+                <i className="far fa-trash-alt"></i>
               </div>
             </div>
           </div>
@@ -39,6 +47,7 @@ class WatchMovie extends React.Component {
             </div>
             <div className="card-footer">
               <i className="fas fa-eye unwatched-eye orange" onClick={this.watchedClickEvent}></i>
+              <i className="far fa-trash-alt unwatched-trash orange" onClick={this.deleteEvent}></i>
             </div>
           </div>
         )

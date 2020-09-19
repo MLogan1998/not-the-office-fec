@@ -23,8 +23,11 @@ const addMovie = (newMovie) => axios.post(`${baseUrl}/watchlist.json`, newMovie)
 
 const updateMovie = (movieId, editedMovie) => axios.put(`${baseUrl}/watchlist/${movieId}.json`, editedMovie);
 
+const deleteMovie = (movieId) => axios.delete(`${baseUrl}/watchlist/${movieId}.json`);
+
 export default {
   addMovie,
   getWatchlistByUid,
   updateMovie,
+  deleteMovie,
 };
