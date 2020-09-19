@@ -10,11 +10,24 @@ class RandomMovie extends React.Component {
   state = {
     quote: {},
     officeCharacter: {},
+    watchlist: false,
   }
 
   componentDidMount() {
     this.getQuote();
     this.getChar();
+    this.watchlistCheck();
+  }
+
+  watchlistCheck = () => {
+    const { movie } = this.props;
+    watchlistData.getWatchlistByMovieId(movie.id)
+      .then((res) => {
+        if (res.length > 0) {
+          this.setState({ watchlist: true });
+        }
+      })
+      .catch((err) => console.error(err));
   }
 
   watchlistClick = (e) => {
@@ -32,7 +45,9 @@ class RandomMovie extends React.Component {
       overview: movie.overview,
     };
     watchlistData.addMovie(newMovie)
-      .then()
+      .then(() => {
+        this.watchlistCheck();
+      })
       .catch((err) => console.error(err));
   }
 
@@ -57,7 +72,7 @@ class RandomMovie extends React.Component {
 
   render() {
     const { movie } = this.props;
-    const { quote, officeCharacter } = this.state;
+    const { quote, officeCharacter, watchlist } = this.state;
     const movieUrl = `https://image.tmdb.org/t/p/w342${movie.poster_path}`;
 
     return (
@@ -79,7 +94,13 @@ class RandomMovie extends React.Component {
           </div>
         </div>
         <div className="item-b">
-          <button className="btn btn-secondary mt-2" onClick={this.watchlistClick}><i className="fas fa-eye mr-2 orange"></i>Add to Watchlist</button>
+          {
+            watchlist ? (
+              <button className="btn btn-secondary mt-2" disabled><i className="fas fa-check mr-2"></i>Add to Watchlist</button>
+            ) : (
+              <button className="btn btn-secondary mt-2" onClick={this.watchlistClick}><i className="fas fa-eye mr-2 orange"></i>Add to Watchlist</button>
+            )
+          }
         </div>
         <div className="item-d">
           <h5>{movie.title}</h5>

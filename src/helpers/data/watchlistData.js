@@ -19,6 +19,22 @@ const getWatchlistByUid = (uid) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const getWatchlistByMovieId = (movieId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/watchlist.json?orderBy="movieId"&equalTo=${movieId}`)
+    .then((response) => {
+      const movie = response.data;
+      const watchlist = [];
+      if (movie) {
+        Object.keys(movie).forEach((watchId) => {
+          movie[watchId].id = watchId;
+          watchlist.push(movie[watchId]);
+        });
+      }
+      resolve(watchlist);
+    })
+    .catch((err) => reject(err));
+});
+
 const addMovie = (newMovie) => axios.post(`${baseUrl}/watchlist.json`, newMovie);
 
 const updateMovie = (movieId, editedMovie) => axios.put(`${baseUrl}/watchlist/${movieId}.json`, editedMovie);
@@ -33,4 +49,5 @@ export default {
   updateMovie,
   deleteMovie,
   getMovieById,
+  getWatchlistByMovieId,
 };
