@@ -1,0 +1,22 @@
+.back-link{
+  text-decoration: none !important;
+  display: flex;
+  align-items: center;
+}
+
+.single-wrapper {
+  h4 {
+    margin-bottom: 2px;
+    font-family: 'Kufam', cursive;
+  }
+  .google-link{
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+
+    h6{
+      color: white;
+      margin: 0px;
+    }
+  }
+}
