@@ -38,7 +38,7 @@ class SingleMovie extends React.Component {
             <p><i className="fas fa-user-alt mr-2 orange"></i>{movie.character}</p>
             <p><i className="fas fa-calendar-alt mr-2 orange"></i>{movie.release_date}</p>
             <p><i className="fas fa-star mr-2 orange"></i>{movie.vote_average}</p>
-            <a href={googleIt} target="_blank" className="google-link"><i className="fab fa-google orange mr-2"></i><h6>Where to watch?</h6></a>
+            <a href={googleIt} target="_blank" rel="noopener noreferrer" className="google-link"><i className="fab fa-google orange mr-2"></i><h6>Where to watch?</h6></a>
           </div>
           <div className="item-f">
             <h6 className="orange">Overview</h6>

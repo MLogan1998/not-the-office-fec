@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import WatchMovie from '../WatchMovie/WatchMovie';
 import ProgressBar from './ProgressBar/ProgressBar';
@@ -70,6 +71,8 @@ class Watchlist extends React.Component {
   render() {
     const { watchlist, progress } = this.state;
     const listMovies = watchlist.map((movie) => <WatchMovie key={movie.id} movie={movie} updateMovie={this.updateMovie} deleteMovie={this.deleteMovie} />);
+    const staffpicks = '/staff-picks';
+
     return (
       <div>
         <h4 className="progressh4">Track your progress. <span className="orange">Never give up.</span></h4>
@@ -82,7 +85,7 @@ class Watchlist extends React.Component {
           </div>
           ) : (
             <div className="doc-wrapper mt-1 mb-4">
-            <h6><span className="green">Congratulations!</span> You have broken the cycle. You are ready to check out our <span className="green">Staff Picks.</span></h6>
+            <h6><span className="green">Congratulations!</span> You have broken the cycle. You are ready to check out our <Link to={staffpicks} className="green watch-link"><u>Staff Picks.</u></Link></h6>
           </div>
           )
         }

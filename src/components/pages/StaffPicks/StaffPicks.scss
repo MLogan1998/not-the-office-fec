@@ -1,0 +1,31 @@
+.watch-link:hover {
+  color: #09fa5a;
+}
+
+.staff-h4{
+  font-family: 'Kufam', cursive;
+  color: white;
+  margin-top: 2vh;
+  margin-bottom: 12px;
+}
+
+.pick-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+
+  .pick-img {
+    margin: 7px;
+    border: 1px solid rgb(77, 77, 77);
+  }
+  .staff-streaming {
+    color: white;
+  }
+
+  .netflix {
+    color: red;
+  }
+  .hbo {
+    color: rgb(122, 60, 245);
+  }
+}
