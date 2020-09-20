@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 import quoteData from '../../../helpers/data/quoteData';
 import authData from '../../../helpers/data/authData';
@@ -74,6 +75,7 @@ class RandomMovie extends React.Component {
     const { movie } = this.props;
     const { quote, officeCharacter, watchlist } = this.state;
     const movieUrl = `https://image.tmdb.org/t/p/w342${movie.poster_path}`;
+    const cleanDate = moment(movie.release_date).format('MMM Do, YYYY');
 
     return (
       <div className="container">
@@ -105,7 +107,7 @@ class RandomMovie extends React.Component {
         <div className="item-d">
           <h5>{movie.title}</h5>
           <p><i className="fas fa-user-alt mr-2 orange"></i>{movie.character}</p>
-          <p><i className="fas fa-calendar-alt mr-2 orange"></i>{movie.release_date}</p>
+          <p><i className="fas fa-calendar-alt mr-2 orange"></i>{cleanDate}</p>
           <p><i className="fas fa-star mr-2 orange"></i>{movie.vote_average}</p>
         </div>
         <div className="item-f">
