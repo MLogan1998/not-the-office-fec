@@ -38,3 +38,31 @@
     background-color: #db8f45
   }
 }
+
+
+@media only screen and (max-width: 600px) {
+  .lp-header {
+    display: none;
+  }
+  .lpText {
+    text-align: center;
+  }
+}
+
+
+@media only screen and (max-width: 1100px) {
+
+  .lpText {
+    width: 80vw !important;
+    text-align: center;
+
+    p {
+      font-size: 17px !important;
+      margin-top: 15px !important;
+    }
+
+    button {
+      margin-bottom: 15px !important;
+    }
+  }
+}

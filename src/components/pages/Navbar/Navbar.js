@@ -49,10 +49,10 @@ class NavBar extends React.Component {
       if (authed) {
         return (
           <Nav className="container-fluid" navbar>
-            <NavItem>
+            <NavItem className="lnk-right">
               <NavLink className="lnk" tag={RRNavLink} to='/generator'>Generator</NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem className="lnk-right">
               <NavLink className="lnk" tag={RRNavLink} to='/watchlist'>Watchlist</NavLink>
             </NavItem>
             <NavItem className="ml-auto">
@@ -71,9 +71,9 @@ class NavBar extends React.Component {
     return (
       <div>
       <Navbar color="dark" light expand="md" className="greybg">
-        <NavbarBrand className="lnk orange" tag={RRNavLink} to='/hello'>Not The Office Again</NavbarBrand>
-        <NavbarToggler onClick={this.toggle} />
-        <Collapse isOpen={isOpen} navbar>
+        <NavbarBrand className="lnk orange nota-nav" tag={RRNavLink} to='/hello'>Not The Office Again</NavbarBrand>
+        <NavbarToggler className="orange-bar" onClick={this.toggle} />
+        <Collapse className="nav-coll" isOpen={isOpen} navbar>
         <Nav className="container-fluid" navbar>
           {buildNav()}
         </Nav>

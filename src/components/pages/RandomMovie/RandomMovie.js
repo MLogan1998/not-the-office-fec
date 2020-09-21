@@ -96,19 +96,20 @@ class RandomMovie extends React.Component {
           </div>
         </div>
         <div className="item-b">
-          {
-            watchlist ? (
-              <button className="btn btn-secondary mt-2" disabled><i className="fas fa-check mr-2"></i>Add to Watchlist</button>
-            ) : (
-              <button className="btn btn-secondary mt-2" onClick={this.watchlistClick}><i className="fas fa-eye mr-2 orange"></i>Add to Watchlist</button>
-            )
-          }
+
         </div>
         <div className="item-d">
           <h5>{movie.title}</h5>
           <p><i className="fas fa-user-alt mr-2 orange"></i>{movie.character}</p>
           <p><i className="fas fa-calendar-alt mr-2 orange"></i>{cleanDate}</p>
           <p><i className="fas fa-star mr-2 orange"></i>{movie.vote_average}</p>
+          {
+            watchlist ? (
+              <button className="btn btn-secondary mt-2" disabled><i className="fas fa-check mr-2"></i>In Watchlist</button>
+            ) : (
+              <button className="btn btn-secondary mt-2" onClick={this.watchlistClick}><i className="fas fa-eye mr-2 orange"></i>Add to Watchlist</button>
+            )
+          }
         </div>
         <div className="item-f">
           <h6 className="orange">Overview</h6>

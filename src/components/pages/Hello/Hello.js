@@ -24,7 +24,7 @@ class Hello extends React.Component {
 
     return (
       <div className="home-wrapper">
-        <h2>There are other options. <span className="orange">Break the cycle.</span></h2>
+        <h2 className="lp-header">There are other options. <span className="orange">Break the cycle.</span></h2>
         <LpCarousel />
         <div className="lpText">
           <p>Welcome to <span className="blue">Not the Office Again</span>. The webpage for people who stream <span className="font-italic">The Office</span> everynight. Use the <span className="blue">Random Movie Generator</span> to find movies featuring your <span className="blue">favorite characters</span> from <span className="font-italic">The Office.</span> Got a problem? <span className="font-weight-bold">Let us help.</span></p>
