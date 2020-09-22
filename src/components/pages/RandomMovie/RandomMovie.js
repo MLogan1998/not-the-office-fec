@@ -95,9 +95,6 @@ class RandomMovie extends React.Component {
             </div>
           </div>
         </div>
-        <div className="item-b">
-
-        </div>
         <div className="item-d">
           <h5 className="detail-char">{movie.title}</h5>
           <p className="detail-char"><i className="fas fa-user-alt mr-2 orange"></i>{movie.character}</p>
@@ -112,8 +109,8 @@ class RandomMovie extends React.Component {
           }
         </div>
         <div className="item-f">
-          <h6 className="orange">Overview</h6>
-          <p>{movie.overview}</p>
+          <h6 className="orange ov-res">Overview</h6>
+          <p className="ov-res">{movie.overview}</p>
         </div>
       </div>
     );

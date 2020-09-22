@@ -20,3 +20,45 @@
     }
   }
 }
+
+
+@media only screen and (max-width: 1100px) {
+
+.single-wrapper {
+  width: 100vw;
+  img {
+    width: 300px;
+  }
+  .item-d {
+    margin-left: 0px;
+  }
+  }  
+}
+
+@media only screen and (max-width: 600px) {
+
+  .single-wrapper {
+    width: 100vw;
+    img {
+     display: none;
+    }
+    .item-d {
+      margin-left: 0px;
+      grid-row-start: 3 !important;
+      grid-column-start: 1 !important;
+      grid-column-end: 4 !important;
+      margin-top:20px;
+    }
+    .item-f {
+      grid-column-start: 1 !important;
+      grid-column-end: 4 !important;
+      grid-row-start: 6 !important;
+      margin-top: 10px;
+      margin: 0 auto;
+      padding: 5px;
+      }
+    .sing-h4 {
+      display: none;
+    }
+    }  
+  }
