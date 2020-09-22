@@ -19,6 +19,7 @@
     "reactstrap": "^8.5.1"
   },
   "scripts": {
+    "deploy": "npm run build && firebase deploy",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject"
