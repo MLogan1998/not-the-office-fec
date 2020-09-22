@@ -81,8 +81,7 @@ class Watchlist extends React.Component {
         {
           progress < 100 ? (
             <div className="doc-wrapper mt-1 mb-4">
-            <i className="fas fa-prescription orange"></i>
-            <h6>Doctors reccomend <span className="orange">watching 10 movies</span> to completely break the cycle.</h6>
+            <h6><i className="fas fa-prescription orange mr-2"></i>Doctors reccomend <span className="orange">watching 10 movies</span> to completely break the cycle.</h6>
           </div>
           ) : (
             <div className="doc-wrapper mt-1 mb-4">

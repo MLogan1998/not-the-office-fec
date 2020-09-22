@@ -18,6 +18,15 @@ const items = [
   {
     src: 'https://i.imgur.com/s7Sg0mE.jpg',
   },
+  {
+    src: 'https://i.imgur.com/9Ubce1V.jpg',
+  },
+  {
+    src: 'https://i.imgur.com/aUpcPmg.jpg',
+  },
+  {
+    src: 'https://i.imgur.com/A4EOuZn.jpg',
+  },
 ];
 
 const LpCarousel = (props) => {
