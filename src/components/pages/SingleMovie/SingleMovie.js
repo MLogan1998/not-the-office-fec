@@ -27,7 +27,7 @@ class SingleMovie extends React.Component {
 
     return (
       <div className="single-wrapper">
-        <h4 className="orange mt-3">{movie.title}</h4>
+        <h4 className="orange mt-3 sing-h4">{movie.title}</h4>
         <div className="doc-wrapper">
           <Link to={goBack} className="back-link"><i className="fas fa-hand-point-left orange"></i><h6>Back to Watchlist</h6></Link>
         </div>

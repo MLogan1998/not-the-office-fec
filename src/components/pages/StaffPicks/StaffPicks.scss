@@ -11,6 +11,7 @@
 
 .pick-wrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-top: 15px;
 
@@ -27,5 +28,10 @@
   }
   .hbo {
     color: rgb(122, 60, 245);
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .pick-img{
+    width: 299px;
   }
 }
