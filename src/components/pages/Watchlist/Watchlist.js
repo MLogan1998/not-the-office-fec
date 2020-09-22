@@ -75,7 +75,7 @@ class Watchlist extends React.Component {
 
     return (
       <div>
-        <h4 className="progressh4">Track your progress. <span className="orange">Never give up.</span></h4>
+        <h4 className="progressh4">Track your <span className="pro-res">progress.</span> <span className="orange give-up">Never give up.</span></h4>
         <ProgressBar progress={progress}/>
         {
           progress < 100 ? (
