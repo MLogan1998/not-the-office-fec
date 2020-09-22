@@ -85,7 +85,7 @@ class RandomMovie extends React.Component {
               <img className="posterimg" src={movieUrl} alt={movie.title}></img>
             </div>
             <div className="back backDetails">
-              <blockquote className="blockquote"><p>{quote.quote}</p>
+              <blockquote className="blockquote"><p className="blockquote-res">{quote.quote}</p>
                 <footer>
                   <cite>
                     {officeCharacter.character}
@@ -99,15 +99,15 @@ class RandomMovie extends React.Component {
 
         </div>
         <div className="item-d">
-          <h5>{movie.title}</h5>
-          <p><i className="fas fa-user-alt mr-2 orange"></i>{movie.character}</p>
-          <p><i className="fas fa-calendar-alt mr-2 orange"></i>{cleanDate}</p>
-          <p><i className="fas fa-star mr-2 orange"></i>{movie.vote_average}</p>
+          <h5 className="detail-char">{movie.title}</h5>
+          <p className="detail-char"><i className="fas fa-user-alt mr-2 orange"></i>{movie.character}</p>
+          <p className="detail-char"><i className="fas fa-calendar-alt mr-2 orange"></i>{cleanDate}</p>
+          <p className="detail-char"><i className="fas fa-star mr-2 orange"></i>{movie.vote_average}</p>
           {
             watchlist ? (
-              <button className="btn btn-secondary mt-2" disabled><i className="fas fa-check mr-2"></i>In Watchlist</button>
+              <button className="btn btn-secondary mt-2 list-btn" disabled><i className="fas fa-check mr-2"></i>In Watchlist</button>
             ) : (
-              <button className="btn btn-secondary mt-2" onClick={this.watchlistClick}><i className="fas fa-eye mr-2 orange"></i>Add to Watchlist</button>
+              <button className="btn btn-secondary mt-2 list-btn" onClick={this.watchlistClick}><i className="fas fa-eye mr-2 orange"></i>Add to Watchlist</button>
             )
           }
         </div>

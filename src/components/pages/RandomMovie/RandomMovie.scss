@@ -154,17 +154,40 @@ blockquote cite:before {
 }
 
 
-@media only screen and (max-width: 1360px) {
+@media only screen and (max-width: 600px) {
   .item-b{
     grid-column-start: 2 !important;
     grid-row-start: 10;
   }
   .container {
     display: grid;
-    height: 80vh;
+    height: 64vh;
   }
 
-  .item-d, .item-f {
-    display: none;
+  .item-f, .detail-char {
+    display: none !important;
   }
+  
+  .item-a {
+    grid-row-start: 2;
+  }
+  
+  .flip-container, .flipper, .front, .back, .posterimg, .item-a {
+      width: 240px !important;
+      height: 360px !important;
+    }
+
+  .item-d {
+    grid-row-start: 1;
+    grid-column-start: 2 !important;
+    margin-left: 0px;
+    place-self: center;
+    // margin-top: 34px;
+    margin-bottom: 28px;
+  }
+
+  .blockquote-res {
+    font-size: 14px;
+  }
+
 }
