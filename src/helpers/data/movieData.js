@@ -10,7 +10,7 @@ const getCharMovies = (charId) => new Promise((resolve, reject) => {
       const movieResopnses = response.data.cast;
       const movies = [];
       movieResopnses.forEach((movieResponse) => {
-        if (movieResponse.poster_path && movieResponse.character && movieResponse.vote_average) {
+        if (movieResponse.poster_path && movieResponse.character && movieResponse.vote_average && movieResponse.title !== 'The Office Retrospective') {
           movieResponse.quoteId = charId;
           movies.push(movieResponse);
         }
