@@ -22,9 +22,11 @@ class RandomMovie extends React.Component {
 
   watchlistCheck = () => {
     const { movie } = this.props;
-    watchlistData.getWatchlistByMovieId(movie.id)
+    const user = authData.getUid();
+    watchlistData.getWatchlistByUid(user)
       .then((res) => {
-        if (res.length > 0) {
+        const userMovie = res.find((item) => item.movieId === movie.id);
+        if (userMovie) {
           this.setState({ watchlist: true });
         }
       })
