@@ -8,7 +8,7 @@
 
 ## Features:
 * **Google Authentication**: Log in with google to keep track of movies you have added to your watchlist, and update your watchlist when you have watched a movie. 
-* **Random Movie Generator**: Not the Office Again uses the [TMDb API](https://developers.themoviedb.org/) to retrive movies featuring your favorite characters from *The Office*. 
+* **Random Movie Generator**: Not the Office Again uses the [TMDb API](https://developers.themoviedb.org/) to retrieve movies featuring your favorite characters from *The Office*. 
 * **Quotes from The Office**: The back of every movie poster on the Random Movie Generator features a quote from *The Office* pulled from *Firebase*. Quote database was created for this project and features over 150 quotes.
 * **User Watchlist**: User watchlists are stored on and retrieved from *Firebase*. Authenticated users can perform full CRUD on their watchlist. 
 * **Track Your Progress**: Track your progress through the program. Everytime you mark a movie as watched, your progress is updated. Complete the program by watching 10 movies and open the door to a new world of content.
