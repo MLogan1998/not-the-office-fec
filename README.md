@@ -12,6 +12,7 @@
 * **Quotes from The Office**: The back of every movie poster on the Random Movie Generator features a quote from *The Office* pulled from *Firebase*. Quote database was created for this project and features over 150 quotes.
 * **User Watchlist**: User watchlists are stored on and retrieved from *Firebase*. Authenticated users can perform full CRUD on their watchlist. 
 * **Track Your Progress**: Track your progress through the program. Everytime you mark a movie as watched, your progress is updated. Complete the program by watching 10 movies and open the door to a new world of content.
+* **Discover**: After completing the program you can view the *Discover* page. From [TMDb API](https://developers.themoviedb.org/) you can view the Top 5 popular TV Shows and 5 random shows that are similar to *The Office*.
 * **Responsive Design**: Project is optimized for viewing and using on phones and tablets.
 
 ## Screenshots:

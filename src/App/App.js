@@ -66,7 +66,7 @@ class App extends React.Component {
                 <Route path='/hello' render={(props) => <Hello authed={authed} {...props} />} />
                 <PrivateRoute path="/watchlist/:movieId" component={SingleMovie} authed={authed} />
                 <PrivateRoute path="/watchlist" component={Watchlist} authed={authed} />
-                <PrivateRoute path="/staff-picks" component={StaffPicks} authed={authed} />
+                <PrivateRoute path="/discover" component={StaffPicks} authed={authed} />
                 <PrivateRoute path="/generator" component={RGenerator} authed={authed} />
                 <PublicRoute path="/auth" component={Hello} authed={authed} />
                 <Redirect from="*" to="/hello" />
