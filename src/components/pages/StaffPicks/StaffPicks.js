@@ -53,7 +53,7 @@ class StaffPicks extends React.Component {
       <div className="staff-wrapper">
         <h4 className="staff-h4"><span className="orange">You're free!</span> Let us introduce you to some of our <span className="orange">favorite content.</span></h4>
         <div className="doc-wrapper">
-          <Link to={goBack} className="back-link"><i class="fas fa-hand-point-left orange"></i><h6>Back to Watchlist</h6></Link>
+          <Link to={goBack} className="back-link"><i className="fas fa-hand-point-left orange"></i><h6>Back to Watchlist</h6></Link>
         </div>
         <div className="popular-wrapper">
           <div className="discover-heading">
