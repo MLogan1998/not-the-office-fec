@@ -26,7 +26,7 @@
 ![Watchlist](screenshots/watchlist.jpg)
 
 #### Site Preview
-![Preview](screenshots/preview.gif)
+![Preview](screenshots/preview1.gif)
 
 ## Technologies:
 * React
