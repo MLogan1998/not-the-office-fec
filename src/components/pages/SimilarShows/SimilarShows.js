@@ -9,8 +9,7 @@ class SimilarShows extends React.Component {
     return (
       <div className="sim-show">
         <img src={simPoster} alt={show.name} />
-        <h6>{show.name}</h6>
-        <h6><i className="fas fa-star mr-2 orange"></i>{show.vote_average}</h6>
+        <p><span className="font-weight-bold white">{show.name}</span> <i className="fas fa-star mr-1 ml-3 orange"></i>{show.vote_average}</p>
       </div>
     );
   }
