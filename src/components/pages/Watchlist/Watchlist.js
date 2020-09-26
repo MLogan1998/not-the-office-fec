@@ -72,7 +72,7 @@ class Watchlist extends React.Component {
   render() {
     const { watchlist, progress } = this.state;
     const listMovies = watchlist.map((movie) => <WatchMovie key={movie.id} movie={movie} updateMovie={this.updateMovie} deleteMovie={this.deleteMovie} />);
-    const staffpicks = '/staff-picks';
+    const staffpicks = '/discover';
 
     return (
       <div>
@@ -85,7 +85,7 @@ class Watchlist extends React.Component {
           </div>
           ) : (
             <div className="doc-wrapper mt-1 mb-4">
-            <h6><span className="green">Congratulations!</span> You have broken the cycle. You are ready to check out our <Link to={staffpicks} className="green watch-link"><u>Staff Picks.</u></Link></h6>
+            <h6><span className="green">Congratulations!</span> You have broken the cycle. You are ready to <Link to={staffpicks} className="green watch-link"><u>discover new content.</u></Link></h6>
           </div>
           )
         }
